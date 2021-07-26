@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.innerContainer {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid black;
+}
