@@ -1,17 +1,24 @@
 import { Container, Box } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Styles/LanguageCard.css'
 function LanguageCard(props) {
+    console.log(props.data.repos)
+    const [watchers, setWatchers] = useState(0);
+    useEffect(() => {
+        props.data.repos.map((item) => {
+            setWatchers(watchers + item.watchers_count);
+
+        })
+    }, [])
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="md" className="outerContainer" onClick={() => console.log("ji")}>
             <Box component="h2" className="container">
-                language
+                {props.lang}
             </Box>
             <Box className="container">
-                <p className="innerContainer"> Popularity: 3</p>
+                <p className="innerContainer"> {`Popularity: ${watchers}`}</p>
 
-                <p className="innerContainer"> Repos: 20</p>
+                <p className="innerContainer"> {`Repos: ${props.data.repos.length}`}</p>
             </Box>
         </Container>
 

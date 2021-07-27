@@ -1,11 +1,7 @@
 
 let defaultState = {
     repoData: [],
-    languages: [{
-        noOfRepos: 0,
-        listOfRepos: [],
-        popularity: 0
-    }]
+    languages: new Map()
 
 }
 const mainReducer = (state = defaultState, action) => {
