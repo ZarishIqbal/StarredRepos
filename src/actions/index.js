@@ -39,7 +39,7 @@ export function loadRepoData(page, pagination) {
                       repos: data.repos,
                     };
 
-                    repos.push(item);
+                    values.repos.push(item);
                     map.set(name, values);
                   } else map.set(name, { count: 1, repos: [item] });
                 });

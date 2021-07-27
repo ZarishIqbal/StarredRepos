@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
-import "./App.css";
+
 import MainPage from "./MainPage";
 import mainReducer from "./reducers";
 import SecondPage from "./SecondPage";

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import LanguageCard from "./Components/LanguageCard";
 import * as actionsCreators from "./actions/index";
-import InfiniteScroll from "react-infinite-scroller";
 function MainPage(props) {
   const [keys, setKeys] = useState([]);
   const [languages, setLanguages] = useState();
@@ -15,22 +14,13 @@ function MainPage(props) {
   }, [props.languages]);
 
   return (
-    <InfiniteScroll
-      pageStart={0}
-      loadMore={props.loadRepoData}
-      hasMore={props.hasMore}
-      loader={
-        <div className="loader" key={0}>
-          Loading ...
-        </div>
-      }
-    >
+    <div>
       {languages &&
         keys.map((item) => {
           const languageData = languages.get(item) ?? null;
           return <LanguageCard data={languageData} lang={item} />;
         })}
-    </InfiniteScroll>
+    </div>
   );
 }
 
