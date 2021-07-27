@@ -10,9 +10,7 @@ const BASE_URL = "https://api.github.com/search/repositories?";
 export function loadRepoData(page, pagination) {
   let map = new Map();
   let date = moment().subtract(31, "days").format("YYYY-MM-DD");
-  let url = pagination
-    ? `${BASE_URL}q=created:?>2020-07-27&sort=stars&order=desc&page=${page}` //date set later than 30 days to show pagination
-    : `${BASE_URL}q=created:?>${date}&sort=stars&order=desc&page=${page}`; //date set for previous 30 days for language
+  let url = `${BASE_URL}q=created:?>${date}&sort=stars&order=desc&page=${page}`; //date set for previous 30 days for language
 
   return (dispatch) => {
     return axios
