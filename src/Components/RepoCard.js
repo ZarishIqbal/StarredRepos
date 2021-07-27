@@ -4,6 +4,7 @@ import React from "react";
 import "../Styles/LanguageCard.css";
 function RepoCard(props) {
   const { data } = props;
+
   return (
     <Container maxWidth="md" style={styles.container}>
       <img src={data.owner.avatar_url} style={styles.image} />
@@ -19,6 +20,7 @@ function RepoCard(props) {
     </Container>
   );
 }
+
 const styles = {
   container: {
     display: "flex",

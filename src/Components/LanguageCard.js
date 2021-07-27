@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import "../Styles/LanguageCard.css";
 function LanguageCard(props) {
   const [watchers, setWatchers] = useState(0);
+
   useEffect(() => {
     props.data.repos.map((item) => {
       setWatchers(watchers + item.watchers_count);
     });
   }, []);
+
   return (
     <Container maxWidth="md" className="outerContainer">
       <Box component="h2" className="container">

@@ -9,10 +9,13 @@ import "./App.css";
 import MainPage from "./MainPage";
 import mainReducer from "./reducers";
 import SecondPage from "./SecondPage";
+
+//Panels to navigate between pages
 function TabPanel(props) {
   if (props.index == 0) return <MainPage />;
   else return <SecondPage />;
 }
+//main App
 function App() {
   let store = createStore(mainReducer, applyMiddleware(thunk));
   const [value, setValue] = useState(0);
